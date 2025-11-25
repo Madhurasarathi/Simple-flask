@@ -1,21 +1,21 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: flask
 metadata:
-  name: pythonmonitor
+  name: flask
   labels:
-    app: monitorapp
+    app: flask
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: monitorapp
+      app: flask
   template:
     metadata:
       labels:
-        app: monitorapp
+        app: flask
     spec:
       containers:
-      - name: monitorapp
-        image: sthuthi22/pythonapp:v1
+      - name: flask
+        image: madhurasr/flask:v1
         ports:
         - containerPort: 5000
